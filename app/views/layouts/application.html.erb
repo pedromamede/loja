@@ -9,7 +9,8 @@
   </head>
   <body>
     <div id="container">
-      <%=menu_principal%>
+      <%=link_to 'Clientes', clientes_path%> - <%=link_to 'Produtos', produtos_path%> -
+      <%=link_to 'Vendedores', vendedores_path%> - <%=link_to 'Vendas', vendas_path%>
       <br/>
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
