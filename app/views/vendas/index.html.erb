@@ -1,0 +1,24 @@
+<h1> Lista de vendas </h1>
+
+
+<table cellpadding=10>
+
+  <tr bgcolor='#4B7399' style='color:white'>
+    <th>Produto</th>
+    <th>Vendedor</th>
+    <th>Cliente</th>
+    <th> </th>
+    <th> </th>
+    <th> </th>
+  </tr>
+  <% @vendas.each do |venda| %>
+    <tr>
+      <td><%= %></td>
+      <td><%= %></td>
+      <td><%= %></td>
+      <td><%= %></td>
+      <td><%= %></td>
+      <td><%= %></td>
+    </tr>
+  <% end %>
+

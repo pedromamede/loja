@@ -1,0 +1,23 @@
+<% if @cliente.errors.any? %>
+  <ul>
+    <% @cliente.errors.full_messages.each do |msg| %>
+      <li><font color='RED'><%= msg %></font></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for (@cliente) do |f| %>
+  Nome:<br/><%= f.text_field :nome%><br/>
+  CPF:<br/><%= f.text_field :cpf%><br/>
+  Email:<br/><%= f.text_field :email%><br/>
+  Telefone:<br/><%= f.text_field :telefone%><br/>
+  <br/>
+  <% if @cliente.new_record? %>
+    <%= submit_tag 'Cadastrar' %>
+  <% else %>
+    <%= submit_tag 'Atualizar' %>
+  <% end %>
+<% end %>
+<br/>
+<%= link_to 'Voltar', clientes_path %>
+

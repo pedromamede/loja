@@ -1,0 +1,28 @@
+<h1> Lista de clientes </h1>
+
+<table cellpadding=10>
+  <tr bgcolor='#4B7399' style='color:white'>
+    <th> Nome </th>
+    <th> CPF </th>
+    <th> Email </th>
+    <th> Telefone </th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @clientes.each do |cliente| %>
+    <tr>
+      <td><%= cliente.nome%></td>
+      <td><%= cliente.cpf%></td>
+      <td><%= cliente.email%></td>
+      <td><%= cliente.telefone%></td>
+      <td><%= link_to 'Mostrar', cliente%></td>
+      <td><%= link_to 'Editar', edit_cliente_path(cliente)%></td>
+      <td><%= link_to 'Excluir', cliente, :method => 'delete', :confirm => "Tem certeza?"%></td>
+    </tr>
+  <% end %>
+</table>
+<br/>
+<%= link_to 'Cadastrar cliente', new_cliente_path %>
+

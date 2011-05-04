@@ -1,0 +1,25 @@
+<h1> Lista de vendedores </h1>
+
+<table cellpadding=10>
+  <tr bgcolor='#4B7399' style='color:white'>
+    <th>Nome</th>
+    <th>Código</th>
+    <th>Salário</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @vendedores.each do |vendedor| %>
+    <tr>
+      <td><%= vendedor.nome%></td>
+      <td><%= vendedor.codigo%></td>
+      <td><%= formato_moeda_real(vendedor.salario) %></td>
+      <td><%= link_to 'Mostrar', vendedor%></td>
+      <td><%= link_to 'Editar', edit_vendedor_path(vendedor)%></td>
+      <td><%= link_to 'Excluir', vendedor,:method => 'delete', :confirm => "Tem certeza?" %></td>
+    </tr>
+  <% end %>
+</table>
+</br>
+<%= link_to 'Cadastrar Vendedor', new_vendedor_path %>
+

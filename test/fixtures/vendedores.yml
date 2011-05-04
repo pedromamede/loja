@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nome: MyString
+  codigo: 1
+  salario: 1.5
+
+two:
+  nome: MyString
+  codigo: 1
+  salario: 1.5

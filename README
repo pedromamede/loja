@@ -1,0 +1,8 @@
+Aplicação básica feita para estudo!
+
+A aplicação tem CRUD's de Produto, Vendedor, Cliente e Venda.
+
+Um Vendedor pode efetuar a Venda de um Produto para um Cliente.
+
+Se existir algum erro ou alguma má pratica sendo utilizando no projeto, se você quiser contribuir com o meu aprendizado e me informar: pedro.mamede@gmail.com
+

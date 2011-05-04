@@ -1,0 +1,28 @@
+<h1> Lista de produtos </h1>
+
+<table cellpadding=10>
+  <tr bgcolor='#4B7399' style='color:white'>
+    <th>Nome</th>
+    <th>Descrição</th>
+    <th>Valor</th>
+    <th>Quantidade</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @produtos.each do |produto| %>
+  <tr>
+    <td> <%=produto.nome%> </td>
+    <td> <%=produto.descricao%> </td>
+    <td> <%=formato_moeda_real(produto.valor)%> </td>
+    <td> <%=produto.quantidade%> </td>
+    <td> <%= link_to 'Mostrar', produto%></td>
+    <td> <%= link_to 'Editar', edit_produto_path(produto)%></td>
+    <td> <%= link_to 'Excluir', produto, :confirm => "Tem certeza?", :method => :delete %></td>
+  </tr>
+  <% end %>
+</table>
+</br>
+<%= link_to 'Cadastrar Produto', new_produto_path %>
+

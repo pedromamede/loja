@@ -1,0 +1,22 @@
+<% if @vendedor.errors.any? %>
+  <ul>
+    <%@vendedor.errors.full_messages.each do |msg| %>
+      <li><font color='RED'><%= msg %></font></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@vendedor) do |f| %>
+  Nome:<br/><%= f.text_field :nome %><br/>
+  Código:<br/><%= f.text_field :codigo %><br/>
+  Salário:<br/><%= f.text_field :salario %><br/>
+  <br/>
+  <% if @vendedor.new_record? %>
+    <%= submit_tag 'Cadastrar' %>
+  <% else %>
+    <%= submit_tag 'Atualizar' %>
+  <% end %>
+<% end %>
+<br/>
+<%= link_to 'Voltar',vendedores_path %>
+

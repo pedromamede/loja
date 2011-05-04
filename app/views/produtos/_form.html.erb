@@ -1,0 +1,24 @@
+<% if @produto.errors.any? %>
+  <ul>
+    <%@produto.errors.full_messages.each do |msg| %>
+      <li><font color='RED'><%= msg %> </font></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%form_for (@produto) do |f| %>
+  Nome: <br/><%= f.text_field :nome %><br/>
+  Descrição: <br/><%= f.text_field :descricao %><br/>
+  Valor: <br/><%= f.text_field :valor %><br/>
+  Quantidade: <br/><%= f.text_field :quantidade %><br/>
+  <br/>
+  <% if @produto.new_record? %>
+    <%= submit_tag 'Cadastrar' %>
+  <% else %>
+    <%= submit_tag 'Atualizar' %>
+  <% end %>
+<% end %>
+<br/>
+<%= link_to 'Voltar', produtos_path %>
+

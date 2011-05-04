@@ -1,0 +1,25 @@
+<h1> Exibindo cliente </h1>
+
+<p>
+  <b>Nome:</b>
+  <%=@cliente.nome%>
+</p>
+
+<p>
+  <b>CPF:</b>
+  <%=@cliente.cpf%>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=@cliente.email%>
+</p>
+
+<p>
+  <b>Telefone:</b>
+  <%=@cliente.telefone%>
+</p>
+
+<%= link_to 'Editar', edit_cliente_path(@cliente) %>
+<%= link_to 'Voltar', clientes_path %>
+

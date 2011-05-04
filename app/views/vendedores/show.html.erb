@@ -1,0 +1,20 @@
+<h1> Exibindo o vendedor </h1>
+
+<p>
+  <b> Nome: </b>
+  <%= @vendedor.nome %>
+</p>
+
+<p>
+  <b> Código: </b>
+  <%= @vendedor.codigo %>
+</p>
+
+<p>
+  <b> Salário: </b>
+  <%= formato_moeda_real(@vendedor.salario) %>
+</p>
+
+<%= link_to 'Editar', edit_vendedor_path(@vendedor) %>
+<%= link_to 'Voltar', vendedores_path %>
+

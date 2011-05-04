@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  produto_id: 
+  vendedor_id: 
+  cliente_id: 1
+
+two:
+  produto_id: 
+  vendedor_id: 
+  cliente_id: 1
