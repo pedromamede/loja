@@ -1,3 +1,4 @@
+-- Sobre o projeto --
 Aplicação básica feita para estudo!
 
 A aplicação tem CRUD's de Produto, Vendedor, Cliente e Venda.
@@ -5,4 +6,38 @@ A aplicação tem CRUD's de Produto, Vendedor, Cliente e Venda.
 Um Vendedor pode efetuar a Venda de um Produto para um Cliente.
 
 Se existir algum erro ou alguma má pratica sendo utilizando no projeto, se você quiser contribuir com o meu aprendizado e me informar: pedro.mamede@gmail.com
+--
+
+
+-- Para quem ta começando --
+
+Pro pessoal que ta começando e ainda tem dificuldade em Rails + Git fica um passo a passo para fazer funcionar essa app.
+
+Para saber como instalar/configurar é só procurar no Google.
+
+Se você não souber o que você está instalando eu recomendo primeiro ler sobre o assunto.
+
+1 - Você deve ter o Git instalado.
+
+2 - Execute o comando git clone git@github.com:pedromamede/loja.git
+
+3 - Instale uma rvm (controla versões do Ruby e seus interpretadores)
+
+4 - Instale a versão 1.8.7 do Ruby (rvm install 1.8.7)
+
+5 - Instale o Rails e o Bundler (gem install rails; gem install bundler)
+
+6 - Execute o comando bundle install dentro do projeto para baixar as dependencias necessárias para rodar o projeto (gems)
+
+7 - Instale o banco de dados MySQL
+
+(Você pode escolher outro banco de dados, mas ao fazer isso você deve mudar algumas coisas, no arquivo /config/database.yml mude
+a gem de adaptação, se for postgres por exemplo, no lugar de mysql2 coloque pg, e instale a gem pg (gem install pg))
+
+8 - Execute os seguintes comandos: rake db:create , rake db:migrate
+
+9 - Para iniciar o servidor default do rails (webrick) e subir a aplicação execute o comando 'rails s'
+
+Agora é só abrir o browser e acessar http://localhost:3000/vendedores por exemplo.
+--
 
