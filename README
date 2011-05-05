@@ -38,6 +38,6 @@ a gem de adaptação, se for postgres por exemplo, no lugar de mysql2 coloque pg
 
 9 - Para iniciar o servidor default do rails (webrick) e subir a aplicação execute o comando 'rails s'
 
-Agora é só abrir o browser e acessar http://localhost:3000/vendedores por exemplo.
+Agora é só abrir o browser e acessar http://localhost:3000/
 --
 
