@@ -1,5 +1,16 @@
-<h1> Lista de vendas </h1>
+<% if @cliente!=nil%>
+  <h2>Lista de vendas feitas ao cliente <%=@cliente.nome %></h2>
+<% else %>
+  <h2> Lista de todas as vendas</h2>
+<% end %>
 
+<p>
+  <%= form_tag vendas_path, :method => 'get' do %>
+  <%= text_field_tag :nome_cliente, params[:nome_cliente] %>
+  <%= submit_tag "Buscar por Cliente" , :name => nil%>
+  <% end %>
+</p>
+<br/>
 
 <table cellpadding=10>
 

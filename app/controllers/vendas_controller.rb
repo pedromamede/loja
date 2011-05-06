@@ -1,7 +1,17 @@
 class VendasController < ApplicationController
 
   def index
-    @vendas = Venda.order "cliente_id"
+    if params[:nome_cliente] && params[:nome_cliente]!=''
+      clientes = Cliente.where(["nome LIKE ?","%#{params[:nome_cliente]}%"])
+      if clientes!=nil && clientes!=[]
+        @cliente = clientes.first
+        @vendas = clientes.first.vendas
+      else
+        @vendas = []
+      end
+    else
+      @vendas = Venda.all
+    end
   end
 
   def show
