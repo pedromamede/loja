@@ -1,0 +1,21 @@
+<h1> Exibindo venda </h1>
+
+<p>
+  <b>Produto:</b>
+  <%=@venda.produto.nome%>
+</p>
+
+<p>
+  <b>Vendedor:</b>
+  <%=@venda.vendedor.nome%>
+</p>
+
+<p>
+  <b>Cliente:</b>
+  <%=@venda.cliente.nome%>
+</p>
+
+
+<%= link_to 'Editar', edit_venda_path(@venda)%>
+<%= link_to 'Voltar', vendas_path(@venda)%>
+
