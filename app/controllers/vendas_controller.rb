@@ -22,7 +22,7 @@ class VendasController < ApplicationController
   end
 
   def update
-    @venda.find(params[:id])
+    @venda = Venda.find(params[:id])
     puts @venda.id
     if @venda.update_attributes(params[:venda])
       redirect_to (@venda, :notice => 'Dados da venda atualizados com sucesso!')
