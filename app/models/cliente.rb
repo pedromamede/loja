@@ -1,6 +1,6 @@
 class Cliente < ActiveRecord::Base
 
-  has_many :vendas
+  has_many :vendas, :dependent => :restrict
 
   validates_presence_of [:nome,:cpf],:message => '- deve ser preenchido.'
   validates_uniqueness_of :cpf,:message => '- Este CPF já está cadastrado.'

@@ -1,6 +1,6 @@
 class Vendedor < ActiveRecord::Base
 
-  has_many :vendas
+  has_many :vendas, :dependent => :restrict
 
   validates_presence_of [:nome,:codigo,:salario],:message => "- deve ser preenchido."
   validates_numericality_of [:codigo,:salario], :message => "- deve ser um número."

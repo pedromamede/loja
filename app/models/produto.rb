@@ -1,6 +1,6 @@
 class Produto < ActiveRecord::Base
 
-  has_many :vendas
+  has_many :vendas, :dependent => :restrict
 
   validates_presence_of [:nome,:descricao,:valor],:message => "- deve ser preenchido."
   validates_uniqueness_of :nome,:message => "- Este nome já está cadastrado."

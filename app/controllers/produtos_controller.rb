@@ -36,8 +36,13 @@ class ProdutosController < ApplicationController
 
   def destroy
     @produto = Produto.find(params[:id])
-    @produto.destroy
-    redirect_to(:action => "index")
+    begin
+      @produto.destroy
+      redirect_to(:action => "index")
+    rescue ActiveRecord::DeleteRestrictionError => error
+      flash[:error] = "O produto está ligado a uma ou mais vendas e não pode ser excluido."
+      redirect_to produtos_path
+    end
   end
 
 end
