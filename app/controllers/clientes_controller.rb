@@ -36,8 +36,13 @@ class ClientesController < ApplicationController
 
   def destroy
     @cliente = Cliente.find(params[:id])
-    @cliente.destroy
-    redirect_to(:action => "index")
+    begin
+      @cliente.destroy
+      redirect_to(:action => "index")
+    rescue ActiveRecord::DeleteRestrictionError => error
+      flash[:error] = "O cliente está ligado a uma ou mais vendas e não pode ser excluido."
+      redirect_to clientes_path
+    end
   end
 
 end

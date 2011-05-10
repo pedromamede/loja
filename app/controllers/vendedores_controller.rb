@@ -37,8 +37,13 @@ class VendedoresController < ApplicationController
 
   def destroy
     @vendedor = Vendedor.find(params[:id])
-    @vendedor.destroy
-    redirect_to(:action => "index")
+    begin
+      @vendedor.destroy
+      redirect_to(:action => "index")
+    rescue ActiveRecord::DeleteRestrictionError => error
+      flash[:error] = "O vendedor está ligado a uma ou mais vendas e não pode ser excluido."
+      redirect_to vendedores_path
+    end
   end
 
 end
