@@ -6,5 +6,7 @@ class Produto < ActiveRecord::Base
   validates_uniqueness_of :nome,:message => "- Este nome já está cadastrado."
   validates_numericality_of [:valor,:quantidade],:message => "- deve ser um número."
 
+  scope :em_estoque, :conditions => 'quantidade > 0'
+
 end
 

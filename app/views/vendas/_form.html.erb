@@ -7,7 +7,7 @@
 <% end %>
 
 <%form_for (@venda) do |f| %>
-  Produto: <br/><%= f.collection_select(:produto_id,Produto.order(:nome),:id,:nome,{:include_blank=>'Selecione um produto'}) %><br/>
+  Produto: <br/><%= f.collection_select(:produto_id,Produto.em_estoque.order(:nome),:id,:nome,{:include_blank=>'Selecione um produto'}) %><br/>
   Vendedor: <br/><%= f.collection_select(:vendedor_id,Vendedor.order(:nome),:id,:nome,{:include_blank=>'Selecione um vendedor'}) %><br/>
   Cliente: <br/><%= f.collection_select(:cliente_id,Cliente.order(:nome),:id,:nome,{:include_blank=>'Selecione um cliente'}) %><br/>
   <br/>
