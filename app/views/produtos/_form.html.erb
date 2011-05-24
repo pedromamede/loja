@@ -7,11 +7,12 @@
 <% end %>
 
 
-<%form_for (@produto) do |f| %>
+<%form_for (@produto, :html => { :multipart => true }) do |f| %>
   Nome: <br/><%= f.text_field :nome %><br/>
   Descrição: <br/><%= f.text_field :descricao %><br/>
   Valor: <br/><%= f.text_field :valor %><br/>
   Quantidade: <br/><%= f.text_field :quantidade %><br/>
+  Foto: <%= f.file_field :avatar %><br/>
   <br/>
   <% if @produto.new_record? %>
     <%= submit_tag 'Cadastrar' %>

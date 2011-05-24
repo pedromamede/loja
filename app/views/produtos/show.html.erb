@@ -20,6 +20,11 @@
   <%= @produto.quantidade %>
 </p>
 
+<p>
+  <b> Foto: </b>
+  <%= image_tag @produto.avatar.url(:medium) %>
+</p>
+
 <%= link_to 'Editar', edit_produto_path(@produto) %>
 <%= link_to 'Voltar', produtos_path %>
 
